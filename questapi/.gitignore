@@ -1,4 +1,8 @@
 HELP.md
+mvnw
+mvnw.cmd
+pom.xml
+.mvn
 target/
 !**/src/main/**/target/
 !**/src/test/**/target/
@@ -32,7 +36,3 @@ build/
 .vscode/
 
 application.properties
-mvnw
-mvnw.cmd
-pom.xml
-.mvn
