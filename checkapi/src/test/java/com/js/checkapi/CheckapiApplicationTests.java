@@ -1,10 +1,10 @@
-package com.js.questapi;
+package com.js.checkapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class QuestapiApplicationTests {
+class CheckapiApplicationTests {
 
 	@Test
 	void contextLoads() {

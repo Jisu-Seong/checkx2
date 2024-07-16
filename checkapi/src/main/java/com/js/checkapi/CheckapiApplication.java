@@ -1,13 +1,13 @@
-package com.js.questapi;
+package com.js.checkapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class QuestapiApplication {
+public class CheckapiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(QuestapiApplication.class, args);
+		SpringApplication.run(CheckapiApplication.class, args);
 	}
 
 }
