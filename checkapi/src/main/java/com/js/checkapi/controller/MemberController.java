@@ -1,5 +1,7 @@
 package com.js.checkapi.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,8 +22,10 @@ public class MemberController {
     private final MemberService memberService;
 
     @PostMapping("/getMemberOne/{memberid}")
-    public Member postMethodName(@PathVariable(name="memberid") Long memberid) {
-        return memberService.getMemberOne(memberid);
+    public ResponseEntity<Member> postMethodName(@PathVariable(name="memberid") Long memberid) {
+        Member member = memberService.getMemberOne(memberid);
+        return new ResponseEntity<>(member, HttpStatus.OK);
+        
     }
     
 }

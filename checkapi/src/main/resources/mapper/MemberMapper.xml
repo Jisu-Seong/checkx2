@@ -2,21 +2,21 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="java.com.js.mapper.MemberMapper">
+<mapper namespace="com.js.checkapi.mapper.MemberMapper">
 
-    <select id="getMemberList" resultType="Member">
+    <select id="getMemberList" resultType="com.js.checkapi.vo.Member">
         <!--회원목록 조회-->
         SELECT
         m.*
         FROM
-        member m
+        tbmember m
     </select>
 
-    <select id="getMemberOne" parameterType= "Long" resultType="Member">
+    <select id="getMemberOne" parameterType= "Long" resultType="com.js.checkapi.vo.Member">
         SELECT 
         m.*
         FROM
-        member m
+        tbmember m
         WHERE m.memberid = #{id}
     </select>
 
