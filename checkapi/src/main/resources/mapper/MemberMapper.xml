@@ -20,6 +20,14 @@
         WHERE m.memberid = #{id}
     </select>
 
+    <select id="getMemberByEmail" parameterType="String" resultType="com.js.checkapi.vo.Member">
+        SELECT
+        m.*
+        FROM
+        tbmember m
+        WHERE m.email = #{email}
+    </select>
+
     <select id="isExistEmail" parameterType="String" resultType="int">
         SELECT 
         count(*)
@@ -28,9 +36,10 @@
         WHERE m.email = #{email}
     </select>
     
-    <insert id="saveMember" parameterType="map" useGeneratedKeys="true" keyProperty="memberid">
-        INSERT INTO tbmember(email, password, nickname)
-        VALUES(#{member.email}, #{member.password}, #{member.nickname})
+    <insert id="saveMember" parameterType="com.js.checkapi.vo.Member">
+        INSERT INTO tbmember(email, password, nickname, social, role)
+        VALUES(#{email}, #{password}, #{nickname}, #{social}, #{role})
     </insert>
+    
 
 </mapper>

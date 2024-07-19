@@ -2,11 +2,14 @@ package com.js.checkapi.repository;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.js.checkapi.mapper.MemberMapper;
 import com.js.checkapi.vo.Member;
 
 import lombok.RequiredArgsConstructor;
 
+@Repository
 @RequiredArgsConstructor
 public class MemberRepository implements MemberMapper{
 
@@ -31,5 +34,12 @@ public class MemberRepository implements MemberMapper{
     public void saveMember(Member member) {
         memberMapper.saveMember(member);
     }
+
+    @Override
+    public Member getMemberByEmail(String email) {
+        return memberMapper.getMemberByEmail(email);
+    }
+
+    
     
 }

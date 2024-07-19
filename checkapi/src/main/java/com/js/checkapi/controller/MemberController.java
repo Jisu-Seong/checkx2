@@ -18,21 +18,21 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-@Transactional
+@RestController
 @RequiredArgsConstructor
-@RequestMapping(value = "/api/member")
+@RequestMapping(value = "/auth")
 @Log4j2
 public class MemberController {
     private final MemberService memberService;
 
-    @PostMapping("/{memberid}")
-    public ResponseEntity<Member> postMethodName(@PathVariable(name="memberid") Long memberid) {
-        Member member = memberService.getMemberOne(memberid);
-        return new ResponseEntity<>(member, HttpStatus.OK);
+    // @PostMapping("/{memberid}")
+    // public ResponseEntity<Member> postMethodName(@PathVariable(name="memberid") Long memberid) {
+    //     Member member = memberService.getMemberOne(memberid);
+    //     return new ResponseEntity<>(member, HttpStatus.OK);
         
-    }
+    // }
 
     @PostMapping("/join")
     public Map<String, String> join(@ModelAttribute JoinRequestDTO joinRequestDTO) {
