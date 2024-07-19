@@ -21,5 +21,15 @@ public class MemberRepository implements MemberMapper{
     public Member getMemberOne(Long memberid) {
         return memberMapper.getMemberOne(memberid);
     }
+
+    @Override
+    public int isExistEmail(String email) {
+        return memberMapper.isExistEmail(email);
+    }
+
+    @Override
+    public void saveMember(Member member) {
+        memberMapper.saveMember(member);
+    }
     
 }

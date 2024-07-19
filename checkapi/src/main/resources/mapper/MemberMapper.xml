@@ -20,4 +20,17 @@
         WHERE m.memberid = #{id}
     </select>
 
+    <select id="isExistEmail" parameterType="String" resultType="int">
+        SELECT 
+        count(*)
+        FROM
+        tbmember m
+        WHERE m.email = #{email}
+    </select>
+    
+    <insert id="saveMember" parameterType="map" useGeneratedKeys="true" keyProperty="memberid">
+        INSERT INTO tbmember(email, password, nickname)
+        VALUES(#{member.email}, #{member.password}, #{member.nickname})
+    </insert>
+
 </mapper>
